@@ -2,12 +2,13 @@ body{
     background-color: black;
 }
 
-header{
+h1{
     color: darkgray;
 }
 
-header h3{
+h2{
     font-weight: normal;
+    color: darkgray;
 }
 
 footer{

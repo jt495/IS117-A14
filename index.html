@@ -7,8 +7,8 @@
     <link rel ="stylesheet" href = "stylize.css">
     <script>
         function setCookie(cname,cvalue,exdays) {
-            var day = new Date();
-            day.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
             var expires = "expires=" + d.toGMTString();
             document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
@@ -32,11 +32,11 @@
         function checkCookie() {
             var user=getCookie("username");
             if (user != "") {
-                alert("Welcome back, " + user);
+                alert("Welcome again " + user);
             } else {
-                user = prompt("Enter your username:","");
+                user = prompt("Please enter your name:","");
                 if (user != "" && user != null) {
-                    setCookie("username", user, 7);
+                    setCookie("username", user, 30);
                 }
             }
         }
@@ -44,15 +44,16 @@
 </head>
 
 <body onload="checkCookie()">
-    <header>
-        <h1>IS 117-002 A14: Cookies</h1>
-        <h3>This simple website should prompt you to put in a name and when you refresh it, it should return your inputted information!</h3>
-    </header>
+    <h1>
+        IS117-A14
+    </h1>
+    <h2>
+        This site should ask for a username and when you refresh/reload the page it'll welcome you back with your username!
+    </h2>
 
     <footer>
-        <p>	&#169; Jeremy Tolentino, 2021</p>
+        &copy; Jeremy Tolentino, 2021
     </footer>
-
 </body>
 
 </html>
