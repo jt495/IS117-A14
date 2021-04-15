@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+}
+
+header{
+    color: darkgray;
+}
+
+header h3{
+    font-weight: normal;
+}
+
+footer{
+    text-align: center;
+    color: darkgray;
+}

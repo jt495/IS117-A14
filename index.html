@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IS117-002 A14</title>
+    <link rel ="stylesheet" href = "stylize.css">
+    <script>
+        function setCookie(cname,cvalue,exdays) {
+            var day = new Date();
+            day.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var user=getCookie("username");
+            if (user != "") {
+                alert("Welcome back, " + user);
+            } else {
+                user = prompt("Enter your username:","");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 7);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="checkCookie()">
+    <header>
+        <h1>IS 117-002 A14: Cookies</h1>
+        <h3>This simple website should prompt you to put in a name and when you refresh it, it should return your inputted information!</h3>
+    </header>
+
+    <footer>
+        <p>	&#169; Jeremy Tolentino, 2021</p>
+    </footer>
+
+</body>
+
+</html>
